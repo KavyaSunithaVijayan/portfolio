@@ -8,8 +8,49 @@ import { FaHeadphonesSimple } from "react-icons/fa6";
 import { FaComputer } from "react-icons/fa6";
 import { FaUserGraduate } from "react-icons/fa6";
 import Animation from "../../components/content/animationObserver";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 function Portfolio() {
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(
+    {
+      loop: true,
+      slides:{
+        perView:3
+      }
+
+    },
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>
+        let mouseOver = false
+        function clearNextTimeout() {
+          clearTimeout(timeout)
+        }
+        function nextTimeout() {
+          clearTimeout(timeout)
+          if (mouseOver) return
+          timeout = setTimeout(() => {
+            slider.next()
+          }, 1000)
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true
+            clearNextTimeout()
+          })
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false
+            nextTimeout()
+          })
+          nextTimeout()
+        })
+        slider.on("dragStarted", clearNextTimeout)
+        slider.on("animationEnded", nextTimeout)
+        slider.on("updated", nextTimeout)
+      },
+    ]
+  )
   return (
     <div>
       <div className="max-w-screen-xl mx-auto bg-white grid grid-cols-2 gap-5 items-center py-16">
@@ -382,12 +423,12 @@ function Portfolio() {
 
             {/* <!-- Hover Overlay --> */}
             <div className="p-7 absolute inset-0 bg-orange-200 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
-              <h2 className="poppins-semibold  font-semibold ">YTS CLONE</h2>
+              <h2 className="poppins-semibold  font-semibold ">DEMO</h2>
               <p className="text-justify leading-5 poppins-light break-all py-4">
-                A digital platform that allows users to stream, rent, or
-                purchase movies and TV shows from various genres. These websites
-                provide a vast collection of content, including the latest
-                releases, classic films, and exclusive originals.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </p>
               <button className="hover-underline poppins-light">
                 {" "}
@@ -395,6 +436,86 @@ function Portfolio() {
               </button>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="py-10 max-w-screen-xl mx-auto" id="what I Do">
+        <div className="text-center relative ">
+          <span className="text-9xl font-bold text-gray-900 opacity-10">
+            MY SKILLS
+          </span>
+          <p className="absolute inset-0 flex flex-col items-center justify-center text-3xl">
+            <p className="w-fit mt-3">
+              SKILLS
+              <hr className="w-16 mt-3 mx-auto text-violet-900 border-[1px]" />
+            </p>
+          </p>
+        </div>
+
+        {/* <Animation animationType={"animate__zoomIn "}>
+          <div>
+            <div className="w-full max-w-sm border border-gray-300 rounded-xl mx-auto my-15">
+              <img
+                className="p-8 rounded-t-lg "
+                src="./image/skils.jpg"
+                alt="product image"
+              />
+
+              <ul className="list-disc px-10">
+                <li className="text-lg  tracking-tight text-gray-900 popins-regular">
+                  FRONT END
+                </li>
+                <p className="text-gray-500 popins-light py-4">
+                  HTML, JavaScript, React, Next.js, Vite
+                </p>
+                <li className="text-lg  tracking-tight text-gray-900 popins-regular">
+                  STYLE SHEET
+                </li>
+                <p className="text-gray-500 popins-light py-4">
+                  CSS, TailWind, Boostrap
+                </p>
+              </ul>
+            </div>
+          </div>
+        </Animation> */}
+
+        <div ref={sliderRef} className="keen-slider py-15">
+          <div className="keen-slider__slide number-slide1 bg-[#B5BDE1] text-center">
+            <img
+              src="./image/code.png"
+              alt="code"
+              className="w-20 mx-auto py-5"
+            />
+            <h2 className="text-2xl font-semibold text-black">FrontEnd</h2>
+            <p>HTML, JavaScript, React, Next.js, Vite</p>
+          </div>
+          <div className="keen-slider__slide number-slide1 bg-[#E5DDF4] text-center">
+            <img
+              src="./image/css.png"
+              alt="code"
+              className="w-20 mx-auto py-5"
+            />
+            <h2 className="text-2xl font-semibold text-black">StyleSheet</h2>
+            <p>CSS, TailWind, Bootstrap</p>
+          </div>
+          <div className="keen-slider__slide number-slide1 bg-[#add8e5] text-center">
+            <img
+              src="./image/css.png"
+              alt="code"
+              className="w-20 mx-auto py-5"
+            />
+            <h2 className="text-2xl font-semibold text-black">Tools & Platforms</h2>
+            <p>Git, Netlify</p>
+          </div>
+          <div className="keen-slider__slide number-slide1 bg-[#E5DDF4] text-center">
+            <img
+              src="./image/css.png"
+              alt="code"
+              className="w-20 mx-auto py-5"
+            />
+            <h2 className="text-2xl font-semibold text-black">Others </h2>
+            <p>REST APIs</p>
+          </div>
+       
         </div>
       </div>
     </div>
