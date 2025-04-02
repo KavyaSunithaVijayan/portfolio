@@ -1,15 +1,32 @@
 import "./App.css";
-import Portfolio from "./pages/portfolio";
-import Header from "./pages/Header";
-import Footer from "./pages/Footer";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
 import Snowfall from "react-snowfall";
+import HomePage from "./pages/portfolio/homePage";
+import About from "./pages/portfolio/about";
+import Technologies from "./pages/portfolio/technology";
+import Experience from "./pages/portfolio/experience";
+import Education from "./pages/portfolio/education";
+import Work from "./pages/portfolio/work";
+import Skills from "./pages/portfolio/skills";
+import Contact from "./pages/portfolio/contact";
+import "react-vertical-timeline-component/style.min.css";
+import "keen-slider/keen-slider.min.css";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="flex-grow">
-        <Portfolio />
+      <div className="px-10 lg:flex-grow ">
+        
+        <HomePage />
+        <About />
+        <Technologies />
+        <Experience />
+        <Education />
+        <Work />
+        <Skills />
+        <Contact />
       </div>
       <Footer />
       <Snowfall

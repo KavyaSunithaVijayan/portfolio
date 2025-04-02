@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import "animate.css"; // Import Animate.css
 
-const Animation = ({
-  animationType,
-  children,
-}: {
+interface AnimationProps {
   animationType: string;
-}) => {
+  children: ReactNode;
+  className?:string;
+}
+
+const Animation: React.FC<AnimationProps> = ({ animationType, children }) => {
   const [animation, setAnimation] = useState("");
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
