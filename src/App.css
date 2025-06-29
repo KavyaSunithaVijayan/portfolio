@@ -1,3 +1,44 @@
-html{
+html {
     scroll-behavior: smooth;
+}
+
+/* Standard keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Vendor-prefixed keyframes for WebKit (for older Safari, etc.) */
+@-webkit-keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@-webkit-keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.animative-text {
+    font-family: Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 21ch;
+    margin: 2em 1em;
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* Standard animation shorthand */
+    animation: typing 2s steps(21, end), blink-caret 0.5s step-end infinite alternate;
+
+    /* WebKit-prefixed animation shorthand */
+    -webkit-animation: typing 2s steps(21, end), blink-caret 0.5s step-end infinite alternate;
 }
