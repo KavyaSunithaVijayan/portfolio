@@ -4,7 +4,7 @@ import "animate.css"; // Import Animate.css
 interface AnimationProps {
   animationType: string;
   children: ReactNode;
-  className?:string;
+  className?: string;
 }
 
 const Animation: React.FC<AnimationProps> = ({ animationType, children }) => {

@@ -1,8 +1,6 @@
-import React from "react";
-
 function Footer() {
   return (
-    <div className="h-32 bg-[#E5E7EB] relative">
+    <div className="h-32 bg-black relative">
       <div className="wrapper">
         <div className="candles">
           <div className="light__wave"></div>

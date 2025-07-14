@@ -20,7 +20,7 @@ function Skills() {
           if (mouseOver) return;
           timeout = setTimeout(() => {
             slider.next();
-          }, 1000);
+          }, 700);
         }
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
@@ -40,42 +40,42 @@ function Skills() {
     ]
   );
   return (
-    <div>
+    <div className="bg-black">
       <div className="py-6 max-w-screen-xl mx-auto" id="what I Do">
         <div className="text-center relative ">
-          <span className="text-7xl lg:text-9xl font-bold text-gray-900 opacity-10">
+          <span className="text-7xl lg:text-9xl font-bold text-white opacity-20">
             MY SKILLS
           </span>
-          <p className="absolute inset-0 flex flex-col items-center justify-center text-2xl lg:text-3xl">
+          <p className="absolute inset-0 flex flex-col items-center justify-center text-2xl lg:text-3xl text-green-500">
             <p className="w-fit mt-3">
               Skills
-              <hr className="w-16 mt-3 mx-auto text-violet-900 border-[1px]" />
+              <hr className="w-16 mt-3 mx-auto text-white border-[1px]" />
             </p>
           </p>
         </div>
 
         <div ref={sliderRef} className="keen-slider py-15">
-          <div className="keen-slider__slide number-slide1 bg-[#B5BDE1] text-center pb-5">
+          <div className="keen-slider__slide number-slide1 bg-white text-center pb-5">
             <img
-              src="./image/code.png"
+              src="./image/Skills/frontend.jpg"
               alt="code"
-              className="w-20 mx-auto py-5"
+              className="w-36 mx-auto py-5 "
             />
             <h2 className="text-2xl font-semibold text-black">FrontEnd</h2>
-            <p>HTML, JavaScript, React, Next.js, Vite</p>
+            <p>HTML, JavaScript,TypeScript, React, Next.js, Vite</p>
           </div>
           <div className="keen-slider__slide number-slide1 bg-[#E5DDF4] text-center">
             <img
-              src="./image/css.png"
+              src="./image/Skills/code.png"
               alt="code"
-              className="w-20 mx-auto py-5"
+              className="w-16 mx-auto py-5"
             />
             <h2 className="text-2xl font-semibold text-black">StyleSheet</h2>
             <p>CSS, TailWind, Bootstrap</p>
           </div>
-          <div className="keen-slider__slide number-slide1 bg-[#add8e5] text-center">
+          <div className="keen-slider__slide number-slide1 bg-white text-center">
             <img
-              src="./image/code-01.png"
+              src="./image/Skills/code-01.png"
               alt="code"
               className="w-20 mx-auto py-5"
             />
@@ -86,7 +86,7 @@ function Skills() {
           </div>
           <div className="keen-slider__slide number-slide1 bg-[#E5DDF4] text-center">
             <img
-              src="./image/api.png"
+              src="./image/Skills/api.png"
               alt="code"
               className="w-20 mx-auto py-5"
             />

@@ -1,35 +1,28 @@
-import React from "react";
-
 function About() {
   return (
-    <div>
-      <div className="py-6 max-w-screen-xl mx-auto ">
+    <div className="bg-black">
+      <div className="py-6 max-w-screen-xl mx-auto px-3">
         <div className="flex gap-5 lg:gap-10 items-center justify-center">
-          <img
-            src="./image/girl-01.jpg"
-            alt="girl-working-02"
-            className="w-40 lg:w-55"
-          />
           <div id="about" className="text-center relative ">
-            <span className="text-7xl lg:text-9xl font-bold text-gray-900 opacity-10">
+            <span className="text-5xl sm:text-7xl lg:text-9xl font-bold text-white opacity-20">
               ABOUT ME
             </span>
-            <p className="absolute inset-0 flex flex-col items-center justify-center text-2xl lg:text-3xl">
+            <p className="absolute inset-0 flex flex-col items-center justify-center text-xl sm:text-2xl lg:text-3xl text-green-500">
               <p className="w-fit mt-3">
                 Know Me More
-                <hr className="w-16 mt-3 mx-auto text-violet-900 border-[1px]" />
+                <hr className="w-16 mt-3 mx-auto text-white border-[1px]" />
               </p>
             </p>
           </div>
         </div>
 
-        <div className="py-15 grid grid-cols-2 lg:grid-cols-3 gap-15 lg:gap-20 items-center">
-          <div className="col-span-2">
-            <p className="text-3xl poppins-semibold tracking-wide">
-              I'm <span className="text-violet-900 ">Kavya Vijayan,</span>a Web
+        <div className="py-15 grid grid-cols-1 lg:grid-cols-3 gap-15 lg:gap-20 items-center">
+          <div className="col-span-1 lg:col-span-2">
+            <p className="text-xl sm:text-3xl poppins-semibold tracking-wide text-white">
+              I'm <span className="text-green-500">Kavya Vijayan,</span>a Web
               Developer
             </p>
-            <p className="text-justify pt-5 poppins-regular tracking-wider leading-7">
+            <p className="text-justify pt-5 poppins-regular tracking-wider leading-7 text-white">
               I help you build brand for your business at an affordable price.
               Thousands of clients have procured exceptional results while
               working with our dedicated team. when an unknown printer took a
@@ -42,30 +35,35 @@ function About() {
             </p>
           </div>
 
-          <div className="col-span-1 ">
+          <div className="cols-span-1">
             <ul>
-              <li className="tracking-wide">
-                <span className="poppins-semibold text-[#4C4D6A]">
+              <li className="tracking-wide ">
+                <div className="flex">
+                  <h2 className="poppins-semibold text-white"> Name : </h2>
+                  <h2 className="text-white poppins-regular px-2">
+                    Kavya Vijayan
+                  </h2>
+                </div>
+              </li>
+              <li>
+                <span className="poppins-semibold text-white">Email : </span>{" "}
+                <span className="poppins-semibold text-white">
                   {" "}
-                  Name :{" "}
+                  <span className="poppins-regular text-white px-2">
+                    {" "}
+                    kavyavijayan6713@gmail.com
+                  </span>
                 </span>
-                <span className="text-black poppins-regular">
-                  Kavya Vijayan
+              </li>
+              <li>
+                <span className="poppins-semibold text-white">Age : </span>
+                <span className="poppins-regular text-white px-2"> 24</span>
+              </li>
+              <li>
+                <span className="poppins-semibold text-white">From :</span>
+                <span className="poppins-regular text-white px-2">
+                  Ernakulam, Kerala
                 </span>
-              </li>
-              <li>
-                <span className="poppins-semibold text-[#4C4D6A]">
-                  Email :{" "}
-                </span>{" "}
-                kavyavijayan6713@gmail.com
-              </li>
-              <li>
-                <span className="poppins-semibold text-[#4C4D6A]">Age : </span>
-                24
-              </li>
-              <li>
-                <span className="poppins-semibold text-[#4C4D6A]">From : </span>
-                Ernakulam, Kerala
               </li>
             </ul>
           </div>
