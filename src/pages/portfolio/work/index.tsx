@@ -1,6 +1,9 @@
 import Animation from "../../../components/content/animationObserver";
 import ChromaGrid from "../../../components/content/CustomGrid/ChromaGrid";
+import { useState, useEffect } from "react";
 function Work() {
+  const [showAll, setShowAll] = useState(false);
+  const [isMdUp, setIsMdUp] = useState(false);
   const items = [
     {
       image: "/image/work/01.png",
@@ -45,29 +48,50 @@ function Work() {
       url: "https://ytsmovie-8a4658.netlify.app/",
     },
   ];
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMdUp(window.innerWidth >= 768); // Tailwind 'md' breakpoint
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  const visibleItems = isMdUp || showAll ? items : items.slice(0, 3);
   return (
-    <div className="bg-black">
-      <div className="py-6 max-w-screen-xl mx-auto" id="what I Do">
+    <div>
+      <div className="pt-8 max-w-screen-xl mx-auto" id="what I Do">
         <div id="work" className="text-center relative ">
-          <span className="text-7xl lg:text-9xl font-bold text-white opacity-20">
+          <span className="text-5xl sm:text-7xl lg:text-9xl font-bold text-white opacity-20">
             MY WORKS
           </span>
-          <p className="absolute inset-0 flex flex-col items-center justify-center text-2xl lg:text-3xl text-green-500">
+          <p className="dancing-script-medium tracking-widest absolute inset-0 flex flex-col items-center justify-center  text-xl sm:text-2xl lg:text-3xl text-green-500">
             <p className="w-fit mt-3">
               Work
               <hr className="w-16 mt-3 mx-auto text-white border-[1px]" />
             </p>
           </p>
         </div>
-        <div className="h-[900px] relative pt-20">
+        <div className="relative py-8">
           <ChromaGrid
-            items={items}
+            items={visibleItems}
             radius={300}
             damping={0.45}
             fadeOut={0.6}
             ease="power3.out"
           />
         </div>
+        {!isMdUp && (
+          <div className="flex justify-center pt-4">
+            <button
+              onClick={() => setShowAll((prev) => !prev)}
+              className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+            >
+              {showAll ? "View Less" : "View More"}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -40,7 +40,7 @@
   background-color: #ffffff;
   animation: change-background infinite linear;
 } */
- /* styles.css */
+/* styles.css */
 #home {
   background-image: url('path/to/your/image.jpg');
   background-size: cover;
@@ -59,6 +59,12 @@
   left: 8%;
   top: 97%;
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 639px) {
+  .wrapper {
+    left: 50%;
+  }
 }
 
 .floor {
@@ -805,5 +811,3 @@ input:nth-of-type(5) {
 input:nth-of-type(5):checked~main#carousel {
   --position: 5;
 }
-
-

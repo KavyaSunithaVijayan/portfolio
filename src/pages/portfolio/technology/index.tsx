@@ -1,20 +1,20 @@
 function Technologies() {
   return (
-    <div className="bg-black">
-      <div className="py-6 max-w-screen-xl mx-auto px-3" id="what I Do">
+    <div>
+      <div className="pt-8 max-w-screen-xl mx-auto px-3" id="what I Do">
         <div id="whatIDo" className="text-center relative ">
           <span className="text-5xl sm:text-7xl lg:text-9xl font-bold text-white opacity-20">
             TECHNOLOGY
           </span>
-          <p className="absolute inset-0 flex flex-col items-center justify-center text-xl sm:text-2xl lg:text-3xl text-green-500">
+          <p className="dancing-script-medium tracking-widest absolute inset-0 flex flex-col items-center justify-center text-xl sm:text-2xl lg:text-3xl text-green-500">
             <p className="w-fit mt-3">
               What I Do
               <hr className="w-16 mt-3 mx-auto text-white border-[1px]" />
             </p>
           </p>
         </div>
-        <div className="py-15 grid grid-cols-1 lg:grid-cols-2 gap-15">
-          <p className="text-justify poppins-regular tracking-wider leading-7 text-white">
+        <div className="py-8 grid grid-cols-1 lg:grid-cols-2 gap-15">
+          <p className="text-justify poppins-regular tracking-wider leading-7 text-white text-smsm:text-lg">
             I am a proficient web developer with experience in front-end
             development, performance optimization, and designing and integrating
             admin panels. I specialize in integrating APIs into user-friendly

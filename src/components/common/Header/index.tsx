@@ -17,12 +17,12 @@ function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <h1 className="text-white hover:text-blue-100 text-2xl">
+          <h1 className="text-white hover:text-blue-100 text-2xl cursor-pointer">
             <a href="https://www.linkedin.com/in/kavya-vijayan-a89b3525b/">
               <TiSocialLinkedin />
             </a>
           </h1>
-          <h1 className="text-white hover:text-green-500 text-2xl">
+          <h1 className="text-white hover:text-green-500 text-2xl cursor-pointer">
             <a href="https://github.com/KavyaSunithaVijayan">
               <FaGithub />
             </a>
